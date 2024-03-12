@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #393838;
+        color: white;
+      }
+      .overall {
+        opacity: ;
+      }
+      .head1 {
+        animation-name: slideinleft;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-duration: 1s;
+      }
+      .big {
+        transition-delay: 1s;
+        transform-origin: 100px;
+        transition-duration: 1s;
+        transition-timing-function: ease;
+      }
+
+      @keyframes slideinleft {
+        from {
+          transform: translate(-300px);
+        }
+        to {
+          transform: translate(0px);
+        }
+      }
+
+      .header {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 70px;
+        background-color: #222;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .header1 {
+        position: fixed;
+        top: 10px;
+        left: 0px;
+        right: 0px;
+        height: 100px;
+        background-color: #222;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+        font-family: "Courier New", Courier, monospace;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin-top: 50px;
+        align-items: center;
+      }
+      .hey {
+        display: grid;
+        align-items: center;
+      }
+      .playerteams {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 200px;
+        column-gap: 50px;
+        align-items: center;
+        align-self: center;
+      }
+      .arsenal {
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        text-align: center;
+        font-size: large;
+        line-height: 40px;
+        font-weight: bold;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        line-break: loose;
+        line-clamp: 20px;
+      }
+      .football:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .basketball:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .cricket:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .baseball:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .formulaone:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .UFC:hover {
+        background-color: rgb(6, 197, 6);
+      }
+      .SERIA:hover {
+        background-color: rgb(6, 197, 6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="head1">WELCOME TO BOWENBET PLATFORM</h1>
+    </div>
+    <div class="header1">
+      <div class="football">FOOTBALL</div>
+      <div class="basketball">BASKETBALL</div>
+      <div class="cricket">CRICKET</div>
+      <div class="baseball">BASEBALL</div>
+      <div class="formulaone">FORMULA ONE</div>
+      <div class="UFC">UFC</div>
+    </div>
+
+    <div class="overall">
+      <div class="hey">
+        <div class="playerteams">
+          <div class="arsenal"></div>
+          <div class="liverpool"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="practice101.js"></script>

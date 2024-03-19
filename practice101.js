@@ -11,7 +11,7 @@ const trunc =
 */
 
 const odds = {
-  Home: (Math.random() * 12) / 2,
+  Home: ((Math.random() * 12) / 2).toFixed(2),
   draw: (Math.random() * 12) / 2,
   Away: (Math.random() * 12) / 2,
 };
@@ -19,48 +19,19 @@ const odds = {
 //
 
 teamtoday = function () {
-  return [
-    Math.trunc(Math.random() * 10),
-    Math.trunc(Math.random() * 10),
-    //Math.trunc(Math.random() * 10),
-    // Math.trunc(Math.random() * 10),
-  ].join("");
+  return [Math.trunc(Math.random() * 10), Math.trunc(Math.random() * 10)].join(
+    ""
+  );
 };
 
 teamtoday2 = function () {
-  return [
-    Math.trunc(Math.random() * 10),
-    Math.trunc(Math.random() * 10),
-    //Math.trunc(Math.random() * 10),
-    // Math.trunc(Math.random() * 10),
-  ].join("");
+  return [Math.trunc(Math.random() * 10), Math.trunc(Math.random() * 10)].join(
+    ""
+  );
 };
 console.log(teamtoday());
 console.log(teamtoday2());
-/*
-const teamsdecisder = function (team1, team2) {
-  for (const value of premierleague) {
-    if (team1 || team2 < 20) {
-      console.log(value);
-    } else if (team1 && team2 > 20) {
-      console.log(value);
-    } else if ((team1 && team2 > 30 && team1) || team2 < 40) {
-      console.log(value);
-    } else if ((team1 && team2 > 40 && team1) || team2 < 50) {
-      console.log(value);
-    } else if ((team1 && team2 > 50 && team1) || team2 < 60) {
-      console.log(value);
-    } else if ((team1 && team2 > 60 && team1) || team2 < 70) {
-      console.log(value);
-    } else if ((team1 && team2 > 70 && team1) || team2 < 80) {
-      console.log(value);
-    } else if ((team1 && team2 > 90 && team1) || team2 < 100) {
-      console.log(value);
-    }
-  }
-};
-teamsdecisder(60, 90);
-*/
+
 let teamonform = [];
 const onForm = function (home, away) {
   if (
@@ -150,13 +121,11 @@ const teampicker = function (team) {
     matchteams.push(premierleague[17]);
   }
 };
-const change = function () {};
+
 teampicker(teamtoday());
 teampicker(teamtoday());
-//teampicker(teamtoday());
-//teampicker(teamtoday2());
 const arsenal = document.querySelector(".arsenal");
-//arsenal.insertAdjacentHTML("afterbegin", act);
+
 let act = [];
 
 console.log(matchteams);
@@ -166,12 +135,11 @@ while (i < 11) {
   teampicker(teamtoday());
   teampicker(teamtoday());
   const act = `<div>${matchteams.join(" VS ")}</div>
-  <div><button class = "big" onclick = "change1()" >odds</buttons> <button>odds</buttons> <button>odds</buttons></div`;
+  <div><button class = "big" onclick = "change1()">Home</buttons> <button class = "big" onclick = "change1()"  >Draw</buttons> <button >Away</buttons></div`;
   if (matchteams.length > 2) {
     matchteams.pop();
     matchteams.pop();
   }
-
   arsenal.insertAdjacentHTML("afterbegin", act);
   console.log(matchteams);
   matchteams.pop();
@@ -180,8 +148,6 @@ while (i < 11) {
   matchteams.pop();
   i++;
 }
-
-//arsenal.insertAdjacentHTML("afterbegin", act);
 console.log(odds.Home);
 if ((teamonform[0] = "true")) {
   odds.Home / 2;
@@ -199,9 +165,12 @@ if (teamonform[0] && teamonform[1]) {
   odds.draw / 2;
 }
 onForm(...matchteams);
+console.log(...matchteams);
 
-const big = document.querySelector(".big");
+const big = document.querySelectorAll(".big");
+
+big.textContent = odds.Home;
+
 const change1 = function () {
-  big.innerHTML = odds.Home;
-  
+  console.log((big.innerHTML = odds.draw));
 };

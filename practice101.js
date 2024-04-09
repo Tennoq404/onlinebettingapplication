@@ -15,71 +15,67 @@ const odds = {
   draw: (Math.random() * 12) / 2,
   Away: (Math.random() * 12) / 2,
 };
-
-//
-
 teamtoday = function () {
   return [Math.trunc(Math.random() * 10), Math.trunc(Math.random() * 10)].join(
-    ""
+    ''
   );
 };
 
 teamtoday2 = function () {
   return [Math.trunc(Math.random() * 10), Math.trunc(Math.random() * 10)].join(
-    ""
+    ''
   );
 };
 console.log(teamtoday());
 console.log(teamtoday2());
-
 let teamonform = [];
 const onForm = function (home, away) {
   if (
-    home === "Arsenal" ||
-    "Manchester United" ||
-    "Manchester City" ||
-    "Liverpool" ||
-    "Spurs" ||
-    "Newcastle United"
+    home === 'Arsenal' ||
+    'Manchester United' ||
+    'Manchester City' ||
+    'Liverpool' ||
+    'Spurs' ||
+    'Newcastle United'
   ) {
-    teamonform.push("true");
+    teamonform.push('true');
   } else {
-    teamonform.push("false");
+    teamonform.push('false');
   }
   if (
-    away === "Arsenal" ||
-    "Manchester United" ||
-    "Manchester City" ||
-    "Liverpool" ||
-    "Spurs" ||
-    "Newcastle United"
+    away === 'Arsenal' ||
+    'Manchester United' ||
+    'Manchester City' ||
+    'Liverpool' ||
+    'Spurs' ||
+    'Newcastle United'
   ) {
-    teamonform.push("true");
+    teamonform.push('true');
   } else {
-    teamonform.push("false");
+    teamonform.push('false');
   }
 };
 
 const premierleague = [
-  "Arsenal",
-  "Aston Villa",
-  "AFC Bournmouth",
-  "Liverpool",
-  "Manchester United",
-  "Manchester City",
-  "Nottinham Forest",
-  "Luton Town",
-  "Crystal Palace",
-  "Everton",
-  "West ham",
-  "Shieffield United",
-  "Newcastle United",
-  "Wolverhamplton wanders",
-  "Chelsea FC",
-  "Fulham",
-  "Burnley",
-  "Spurs",
-  "Brentford",
+  'Arsenal',
+  'Aston Villa',
+  'AFC Bournmouth',
+  'Liverpool',
+  'Manchester United',
+  'Manchester City',
+  'Nottinham Forest',
+  'Luton Town',
+  'Crystal Palace',
+  'Everton',
+  'West ham',
+  'Shieffield United',
+  'Newcastle United',
+  'Wolverhamplton wanders',
+  'Chelsea FC',
+  'Fulham',
+  'Burnley',
+  'Spurs',
+  'Brentford',
 ];
 const matchteams = [];
 const teampicker = function (team) {
@@ -124,7 +120,7 @@ const teampicker = function (team) {
 
 teampicker(teamtoday());
 teampicker(teamtoday());
-const arsenal = document.querySelector(".arsenal");
+const arsenal = document.querySelector('.arsenal');
 
 let act = [];
 
@@ -134,13 +130,13 @@ let i = 0;
 while (i < 11) {
   teampicker(teamtoday());
   teampicker(teamtoday());
-  const act = `<div>${matchteams.join(" VS ")}</div>
+  const act = `<div>${matchteams.join(' VS ')}</div>
   <div><button class = "big" onclick = "change1()">Home</buttons> <button class = "big" onclick = "change1()"  >Draw</buttons> <button >Away</buttons></div`;
   if (matchteams.length > 2) {
     matchteams.pop();
     matchteams.pop();
   }
-  arsenal.insertAdjacentHTML("afterbegin", act);
+  arsenal.insertAdjacentHTML('afterbegin', act);
   console.log(matchteams);
   matchteams.pop();
   matchteams.pop();
@@ -149,13 +145,13 @@ while (i < 11) {
   i++;
 }
 console.log(odds.Home);
-if ((teamonform[0] = "true")) {
+if ((teamonform[0] = 'true')) {
   odds.Home / 2;
 } else {
   odds.Away / 3;
 }
 
-if ((teamonform[1] = "true")) {
+if ((teamonform[1] = 'true')) {
   odds.Home / 2;
 } else {
   odds.Away / 3;
@@ -167,7 +163,7 @@ if (teamonform[0] && teamonform[1]) {
 onForm(...matchteams);
 console.log(...matchteams);
 
-const big = document.querySelectorAll(".big");
+const big = document.querySelectorAll('.big');
 
 big.textContent = odds.Home;
 

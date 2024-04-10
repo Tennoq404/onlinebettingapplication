@@ -31,22 +31,93 @@ const Teams = {
   Team19: 'West Ham United',
   Team20: 'WolverHampton Wanders',
 };
+let checker;
 const Objectoffunctions = {
   pickteams: function () {
     return Number(
       [Math.trunc(Math.random() * 10), Math.trunc(Math.random() * 10)].join('')
     );
   },
-  odd: function () {
-    document.querySelectorAll('.but1')[0].textContent = (
+  odd2: function () {
+    const number = (Math.random() + 1).toFixed(2);
+    document.querySelectorAll('.but3')[0].textContent = number;
+
+    document.querySelectorAll('.but3')[1].textContent = (
       Math.random() + 1
     ).toFixed(2);
+
+    document.querySelectorAll('.but3')[2].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+
+    document.querySelectorAll('.but3')[3].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[4].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[5].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[6].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[7].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[10].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but3')[1].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+  },
+  odd3: function () {
+    const number = (Math.random() + 1).toFixed(2);
+    document.querySelectorAll('.but2')[0].textContent = number;
+
+    document.querySelectorAll('.but2')[1].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+
+    document.querySelectorAll('.but2')[2].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+
+    document.querySelectorAll('.but2')[3].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[4].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[5].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[6].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[7].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[10].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but2')[1].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+  },
+  odd: function () {
+    const number = (Math.random() + 1).toFixed(2);
+    document.querySelectorAll('.but1')[0].textContent = number;
+
     document.querySelectorAll('.but1')[1].textContent = (
       Math.random() + 1
     ).toFixed(2);
+
     document.querySelectorAll('.but1')[2].textContent = (
       Math.random() + 1
     ).toFixed(2);
+
     document.querySelectorAll('.but1')[3].textContent = (
       Math.random() + 1
     ).toFixed(2);
@@ -59,8 +130,18 @@ const Objectoffunctions = {
     document.querySelectorAll('.but1')[6].textContent = (
       Math.random() + 1
     ).toFixed(2);
+    document.querySelectorAll('.but1')[7].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but1')[10].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
+    document.querySelectorAll('.but1')[1].textContent = (
+      Math.random() + 1
+    ).toFixed(2);
   },
 };
+
 console.log(Objectoffunctions.pickteams());
 
 const deciderFunction = function (team) {
@@ -108,10 +189,8 @@ while (i < 10) {
   deciderFunction(Objectoffunctions.pickteams());
   console.log(matchteams);
 
-  const act = `<div class = "hi">${matchteams.join(
-    ' VS '
-  )}   <button onclick ="pick1()" class= "pick" >pick</button></div>
-  <div><button class = "but1" >Home</button><button>Draw</button><button class = "but2">Away</button></div> `;
+  const act = `<div class = "hi">${matchteams.join(' VS ')}   </div>
+  <div><button class = "but1" >Home</button><button class = "but3">Draw</button><button class = "but2">Away</button></div> `;
   matchteams.pop();
   matchteams.pop();
 
@@ -120,7 +199,22 @@ while (i < 10) {
   i++;
 }
 document.querySelectorAll('.but1').forEach(but =>
-  but.addEventListener('click', function () {
+  but.addEventListener('click', function (e) {
+    e.preventDefault();
     Objectoffunctions.odd();
+    checker = 'already clicked';
+    Objectoffunctions.checker();
+  })
+);
+document.querySelectorAll('.but3').forEach(but =>
+  but.addEventListener('click', function (e) {
+    e.preventDefault();
+    Objectoffunctions.odd2();
+  })
+);
+document.querySelectorAll('.but2').forEach(but =>
+  but.addEventListener('click', function (e) {
+    e.preventDefault();
+    Objectoffunctions.odd3();
   })
 );
